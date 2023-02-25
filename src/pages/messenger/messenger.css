@@ -1,0 +1,70 @@
+.messenger{
+    height: calc(100vh - 70px);
+    display: flex;
+}
+.messengerMenu{
+    flex:3.5
+}
+.inputFriend{
+    width: 90%;
+    border: none;
+    border-bottom: 1px solid rgb(233, 230, 230);
+    padding: 10px;
+}
+.inputFriend:focus{
+    outline: none;
+}
+.messengerChatBox{
+    flex:5.5
+}
+.messengerChatOnline{
+    flex: 3
+}
+.messengerMenuWrapper,.messengerBoxWrapper,.messengerOnlineWrapper{
+    padding: 10px;
+    height: 100%;
+}
+.messengerBoxWrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+}
+.chatBoxTop{
+    height: 100%;
+    overflow-y: scroll;
+    padding-right: 10px;
+}
+.chatBoxBottom{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.textAreaMessage{
+    width: 80%;
+    height: 90px;
+    padding:10px;
+}
+.textAreaMessage:focus{
+   outline: none;
+}
+.btnMessage{
+    width: 70px;
+    height: 40px;
+    background-color: teal;
+    padding: 10px;
+    color: white;
+    border-radius: 5px;
+    border:none;
+    cursor: pointer;
+}
+.btnMessage:focus{
+    outline: none;
+}
+.chatText{
+    position: absolute;
+    font-size: 50px;
+    color: rgb(226, 223, 223);
+    top:10%;
+    cursor: default;
+}

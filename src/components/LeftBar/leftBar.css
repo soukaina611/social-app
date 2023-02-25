@@ -1,0 +1,63 @@
+.leftBar{
+    flex:3;
+    height:calc(100vh - 50px);
+    overflow-y: scroll;
+    position: sticky;
+    top:50px;
+}
+::-webkit-scrollbar{
+    width: 5px;
+}
+::-webkit-scrollbar-track{
+    background-color: #f1fff1;
+}
+::-webkit-scrollbar-thumb{
+    background-color: rgb(179, 179, 179);
+}
+.leftBarWrapper{
+    padding: 20px;
+}
+.leftBarTop{
+    margin: 0px;
+    padding: 0;
+    list-style: none;
+}
+.leftBarItem{
+    display:flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.iconBar{
+    margin-right: 15px;
+}
+.iconBarText{
+    font-size: 18px;
+}
+.btnBar{
+    border: none;
+    width: 150px;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: 500;
+    cursor: pointer;
+}
+.hrBar{
+    margin:20px 0px;
+}
+.leftBarBottom{
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+.leftBarBottomItem{
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+.leftBarImg{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+}

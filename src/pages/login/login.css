@@ -1,0 +1,80 @@
+.login{
+    width: 100vw;
+    height: 100vh;
+    background-color: #F0F2F5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.loginWrapper{
+    display: flex;
+    width: 75%;
+    height: 60%;
+}
+.loginLeft, .loginRight{
+    flex:1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.nameApp{
+    font-size: 60px;
+    color:#1877f2;
+    margin-right: 10px;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+.loginText{
+    font-size: 28px;
+}
+.loginRightContainer{
+    height: 300px;
+    width: 70%;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.inputText{
+    height: 50px;
+    border: 1px solid rgb(212, 208, 208);
+    border-radius: 6px;
+    font-size: 16px;
+    margin-bottom: 15px;
+    padding-left: 15px;
+}
+.inputText:focus{
+    outline:none
+}
+.loginBtn{
+    border: none;
+    height: 50px;
+    background-color: #1877f2;
+    color: white;
+    font-weight: 600;
+    border-radius: 6px;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 10px;
+}
+.forgotPassword{
+    font-size: 14px;
+    color: #1877f2;
+    text-align: center;
+    margin:20px 0px;
+}
+.registerBtn{
+    border:none;
+    height:50px;
+    background-color: #42B72A;
+    border-radius: 6px;
+    color:white;
+    font-weight: 600;
+    font-size: 18px;
+    cursor: pointer;
+    width: 60%;
+    padding: 15px;
+    margin-top:20px;
+    align-self: center;
+}

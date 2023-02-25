@@ -1,0 +1,80 @@
+.share{
+    width: 100%;
+    background-color: white;
+    border-radius: 5px;
+    -webkit-box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.28); 
+    box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.28);
+    padding: 10px;
+}
+.shareWrapper{
+    padding: 10px;
+    
+}
+.shareHeaderTop{
+    display: flex;
+    align-items: center;
+}
+.imagePicture{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+}
+.shareInputText{
+    border: none;
+    width: 80%;
+}
+.shareInputText:focus{
+    outline: none;
+}
+.hr{
+    margin: 20px;
+}
+.shareHeaderBottom{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.shareBottomRight{
+    margin:0;
+    padding:0;
+    display: flex;
+    list-style: none;
+}
+.shareBottomItem{
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+}
+.iconItem{
+    font-size: 18px;
+    margin-right: 3px;
+}
+.iconText{
+    font-size: 14px;
+    font-weight: 500;
+}
+.shareBtn{
+    border:none;
+    border-radius: 5px;
+    background-color: green;
+    padding: 7px;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+}
+.imgFileContainer{
+    padding: 0px 20px 10px 20px;
+    position: relative;
+}
+.imgFile{
+    width: 100%;
+    object-fit: cover;
+}
+.cancelFile{
+    position: absolute;
+    top:0px;
+    right:20px;
+    cursor: pointer;
+}

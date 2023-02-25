@@ -1,0 +1,21 @@
+.conversation{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 10px;
+    margin-top: 20px;
+}
+.conversation:hover{
+    background-color: rgb(250, 248, 248);
+}
+
+.imgFriend{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 20px;
+}
+.friendName{
+    font-weight: 500;
+}
