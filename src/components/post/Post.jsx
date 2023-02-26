@@ -44,7 +44,7 @@ const Post = ({post}) => {
       <div className='postWrapper'>
         <div className="postWrapperTop">
           <div className="postItem">
-            <Link to={`/profile/${user.username}`}>
+            <Link to={`/profile/`+user.username}>
             <img src={user.profilePicture ? `${BASE_URL}/images/`+user.profilePicture : `${BASE_URL}/images/person/noAvatar.png`} alt="" className="imgProfilePost" />
             </Link>
           <span className="userName">{user.username}</span>
