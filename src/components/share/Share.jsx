@@ -28,8 +28,7 @@ const Share = () => {
         data.append('file', file);
         post.img=fileName;
         try{
-          const res=await axios.post(`${BASE_URL}/upload`,data);
-          console.log(res)
+          await axios.post(`${BASE_URL}/upload`,data);
           window.location.reload();
         }catch(err){
           console.log(err)
@@ -37,6 +36,7 @@ const Share = () => {
       }
     try{
       await axios.post(`${BASE_URL}/posts`,post);
+      window.location.reload();
     }catch(err){
       console.log(err)
     }
