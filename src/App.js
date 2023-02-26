@@ -15,8 +15,8 @@ function App() {
     <BrowserRouter>
     <Routes>
       <Route exact path="/" element={user ? <Home/>: <Register/>}></Route>
-      <Route path="/login" element={user ? <Navigate to="/" />: <Login/>}></Route>
-      <Route path="/register" element={user ? <Navigate to="/login" />:<Register/>}></Route>
+      <Route path="/login" element={user ? <Home/>: <Login/>}></Route>
+      <Route path="/register" element={user ? <Login />:<Register/>}></Route>
       <Route path="/messenger" element={!user ? <Navigate to="/register" />:<Messenger/>}></Route>
       <Route path="/profile/:username" element={<Profile/>}></Route>
     </Routes>
