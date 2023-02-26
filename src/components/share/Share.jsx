@@ -28,7 +28,8 @@ const Share = () => {
         data.append('file', file);
         post.img=fileName;
         try{
-          await axios.post(`${BASE_URL}/upload`,data);
+          const res=await axios.post(`${BASE_URL}/upload`,data);
+          console.log(res)
           window.location.reload();
         }catch(err){
           console.log(err)
@@ -76,7 +77,7 @@ const Share = () => {
 
           </div>
           <div className="shareBottomLeft">
-            <button type='submit' className='shareBtn'>Share</button>
+            <button className='shareBtn'>Share</button>
           </div>
         </div>
       </form>
