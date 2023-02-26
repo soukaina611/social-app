@@ -22,7 +22,7 @@ const Messenger = () => {
   const socket=useRef();
   
   useEffect(()=>{
-    socket.current=io("ws://localhost:5500");
+    socket.current=io(`${BASE_URL}`);
     socket.current.on("getMessage", (data)=>{
       setArivalMessages({
         sender:data.senderId,
