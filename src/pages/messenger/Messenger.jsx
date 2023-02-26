@@ -7,6 +7,8 @@ import TopBar from "../../components/TopBar"
 import "./messenger.css"
 import axios from 'axios';
 import {io} from 'socket.io-client'
+import { BASE_URL } from '../../services/helper'
+
 
 const Messenger = () => {
   const {user} = useContext(AuthContext);
@@ -48,7 +50,7 @@ const Messenger = () => {
   useEffect(()=>{
     const getConversations=async()=>{
       try{
-      const res= await axios.get("/conversations/"+user._id);
+      const res= await axios.get(`${BASE_URL}/conversations/`+user._id);
       setConversations(res.data);
       }catch(err){
         console.log(err)
@@ -60,7 +62,7 @@ const Messenger = () => {
   useEffect(()=>{
     const getMessages=async()=>{
     try{
-      const messages= await axios.get("/messages/"+ currentChat?._id);
+      const messages= await axios.get(`${BASE_URL}/messages/`+ currentChat?._id);
       setMessages(messages.data);
     }catch(err){
       console.log(err)
@@ -83,7 +85,7 @@ const Messenger = () => {
       text: newMessages
     })
     try{
-      const res= await axios.post("/messages", message);
+      const res= await axios.post(`${BASE_URL}/messages`, message);
       setMessages([...messages, res.data]);
       setNewMessages("");
     }catch(err){

@@ -7,6 +7,8 @@ import EmojiEmotionsIcon from '@mui/icons-material/EmojiEmotions';
 import CancelIcon from "@mui/icons-material/Cancel"
 import axios from 'axios';
 import { AuthContext } from '../context/AuthContext';
+import { BASE_URL } from '../../services/helper'
+
 
 const Share = () => {
   const {user} = useContext(AuthContext);
@@ -26,14 +28,14 @@ const Share = () => {
         data.append('file', file);
         post.img=fileName;
         try{
-          await axios.post("/upload",data);
+          await axios.post(`${BASE_URL}/upload`,data);
           window.location.reload();
         }catch(err){
           console.log(err)
         }
       }
     try{
-      await axios.post("/posts",post);
+      await axios.post(`${BASE_URL}/posts`,post);
     }catch(err){
       console.log(err)
     }
@@ -42,7 +44,7 @@ const Share = () => {
     <div className='share'> 
       <form className='shareWrapper' onSubmit={handlePost}>
         <div className='shareHeaderTop'>
-          <img src={user.profilePicture ? "/images/"+user.profilePicture : "/images/person/noAvatar.png"} alt="" className="imagePicture" />
+          <img src={user.profilePicture ? `${BASE_URL}/images/`+user.profilePicture : `${BASE_URL}/images/person/noAvatar.png`} alt="" className="imagePicture" />
           <input placeholder={`What's in your mind ${user.username} ?`} className="shareInputText" ref={desc} />
         </div>
         <hr className='hr'/>

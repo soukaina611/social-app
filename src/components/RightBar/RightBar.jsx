@@ -5,6 +5,7 @@ import OnlineFriend from '../OnlineFriend/OnlineFriend'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 import { AuthContext } from '../context/AuthContext'
+import { BASE_URL } from '../../services/helper'
 
 const RightBar = ({user}) => {
   const [friends, setFriends]=useState([]);
@@ -18,7 +19,7 @@ useEffect(()=>{
   useEffect(()=>{
   const friendList=async()=>{
     try{
-     const res= await axios.get("/users/friends/"+ user._id);
+     const res= await axios.get(`${BASE_URL}/users/friends/`+ user._id);
       setFriends(res.data);
     }catch(err){
       console.log(err)
@@ -31,10 +32,10 @@ useEffect(()=>{
 const handleClick=async()=>{
   try{
     if(followed){
-      await axios.put("/users/"+user._id+"/unfollow", {userId:currentUser._id});
+      await axios.put(`${BASE_URL}/users/`+user._id+"/unfollow", {userId:currentUser._id});
       dispatch({type:"UNFOLLOW",payload:user._id});
     }else{
-      await axios.put("/users/"+user._id+"/follow", {userId:currentUser._id});
+      await axios.put(`${BASE_URL}/users/`+user._id+"/follow", {userId:currentUser._id});
       dispatch({"type":"FOLLOW",payload : user._id});
     }
     setfollowed(!followed);
@@ -47,10 +48,10 @@ const handleClick=async()=>{
     return (
       <>
       <div className="rightBarTop">
-        <img src="/images/birthdayImg.png" alt="" className="birthday" />
+        <img src={`${BASE_URL}/images/birthdayImg.png`} alt="" className="birthday" />
           <span className="birthdayText"><b>Pola Foster</b> and <b>3 others friends</b> have a birthday today</span>
       </div>
-          <img src="assets/images.jpg" alt="" className="adsImg" />
+          <img src={`${BASE_URL}/images/images.jpg`} alt="" className="adsImg" />
           <span className="onlineFriendText">Online Friends</span>  
           <ul className="friendList">
             {Users.map((u)=>(
@@ -86,7 +87,7 @@ const handleClick=async()=>{
         {friends.map(friend =>(
           <Link style={{textDecoration:"none"}}to={"/profile/"+friend.username}>
           <div className="friendItem">
-          <img src={friend.profilePicture ? "/images/"+friend.profilePicture : "/images/person/noAvatar.png"} alt="" className="friendPicture" />
+          <img src={friend.profilePicture ? `${BASE_URL}/images/`+friend.profilePicture : `${BASE_URL}/images/person/noAvatar.png`} alt="" className="friendPicture" />
           <span className="friendName">{friend.username}</span>
           </div>
           </Link>

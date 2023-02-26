@@ -6,6 +6,7 @@ import RightBar from '../../components/RightBar/RightBar'
 import './profile.css'
 import axios from 'axios'
 import { useParams } from 'react-router'
+import { BASE_URL } from '../../services/helper'
 
 const Profile = () => {
   const [user, setUser]=useState({});
@@ -13,7 +14,7 @@ const Profile = () => {
 
   useEffect(()=>{
     const fetchUser=async()=>{
-      const res= await axios.get(`/users?username=${username}`);
+      const res= await axios.get(`${BASE_URL}/users?username=${username}`);
       setUser(res.data);
     }
     fetchUser();
@@ -27,8 +28,8 @@ const Profile = () => {
       <div className="profileRight">
         <div className='profileRightTop'>
           <div className='imgContainer'>
-            <img src={user.coverPicture ? "/images/"+user.coverPicture : "/images/post/noCover.jpg"} alt="" className="imgCover" />
-            <img src={user.profilePicture ? "/images/"+user.profilePicture : "/images/person/noAvatar.png"} alt="" className="profileImg" />
+            <img src={user.coverPicture ? `${BASE_URL}/images/`+user.coverPicture : `${BASE_URL}/images/post/noCover.jpg`} alt="" className="imgCover" />
+            <img src={user.profilePicture ? `${BASE_URL}/images/`+user.profilePicture : `${BASE_URL}/images/person/noAvatar.png`} alt="" className="profileImg" />
           </div>
           <div className="profileInfo">
             <h4 className="profileInfoName">{user.username}</h4>

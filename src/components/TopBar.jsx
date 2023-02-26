@@ -6,6 +6,8 @@ import PersonIcon from '@mui/icons-material/Person';
 import ChatIcon from '@mui/icons-material/Chat';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import { AuthContext } from './context/AuthContext';
+import { BASE_URL } from '../services/helper'
+
 
 const TopBar = () => {
   const {user}= useContext(AuthContext);
@@ -46,7 +48,7 @@ const TopBar = () => {
         </div>
         <div className="imageItem">
           <Link to={`/profile/${user.username}`}>
-          <img className="imageProfile" src={user.profilePicture ? "/images/"+user.profilePicture : "/images/person/noAvatar.png"} alt="" />
+          <img className="imageProfile" src={user.profilePicture ? `${BASE_URL}/images/`+user.profilePicture : `${BASE_URL}/images/person/noAvatar.png`} alt="" />
           </Link>
         </div>
       </div>

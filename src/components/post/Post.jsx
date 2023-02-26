@@ -7,6 +7,8 @@ import {Link} from 'react-router-dom';
 import {format} from 'timeago.js'
 import axios from 'axios'
 import { AuthContext } from '../context/AuthContext';
+import { BASE_URL } from '../../services/helper'
+
 
 const Post = ({post}) => {
   const {user:currentUser}=useContext(AuthContext)
@@ -16,7 +18,7 @@ const Post = ({post}) => {
 
   const handleClick=async()=>{
       try{
-        await axios.put("/posts/"+post._id+"/like", {userId:currentUser._id})
+        await axios.put(`${BASE_URL}/posts/"+post._id+"/like`, {userId:currentUser._id})
         
       }catch(err){
         console.log(err)
@@ -31,7 +33,7 @@ const Post = ({post}) => {
 
   useEffect(()=>{
     const fetchUser=async()=>{
-    const res= await axios.get(`/users?userId=${post.userId}`);
+    const res= await axios.get(`${BASE_URL}/users?userId=${post.userId}`);
     setUser(res.data);
     }
     fetchUser();
@@ -43,7 +45,7 @@ const Post = ({post}) => {
         <div className="postWrapperTop">
           <div className="postItem">
             <Link to={`/profile/${user.username}`}>
-            <img src={user.profilePicture ? "/images/"+user.profilePicture : "/images/person/noAvatar.png"} alt="" className="imgProfilePost" />
+            <img src={user.profilePicture ? `${BASE_URL}/images/`+user.profilePicture : `${BASE_URL}/images/person/noAvatar.png`} alt="" className="imgProfilePost" />
             </Link>
           <span className="userName">{user.username}</span>
           <span className="date">{format(post.createdAt)}</span>
@@ -54,7 +56,7 @@ const Post = ({post}) => {
           <span className="text">{post.desc}</span>
         </div>
         <div className="postWrapperCenter">
-          <img src={"/images/"+post.img} alt="" className="postPicture" />
+          <img src={`${BASE_URL}/images/`+post.img} alt="" className="postPicture" />
         </div>
         <div className="postWrapperBottom">
           <div className="postBottomLeft">

@@ -12,6 +12,8 @@ import CloseFriend from "../closeFriend/CloseFriend";
 import axios from 'axios'
 import { AuthContext } from '../context/AuthContext';
 import { Link } from 'react-router-dom';
+import { BASE_URL } from '../../services/helper'
+
 
 const LeftBar = () => {
     const {user}=useContext(AuthContext);
@@ -19,7 +21,7 @@ const LeftBar = () => {
  useEffect(()=>{
     const getCloseFriends=async()=>{
         try{
-            const closeFriends= await axios.get("/users/all");
+            const closeFriends= await axios.get(`${BASE_URL}/users/all`);
             console.log(closeFriends.data)
             setUsers(closeFriends.data);
         }catch(err){
