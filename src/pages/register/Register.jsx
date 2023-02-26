@@ -32,7 +32,9 @@ const Register = () => {
     }
     }
   }
-  
+  const handleLogin=()=>{
+    navigate('/login');
+  }
 
   return (
     <div className="register">
@@ -48,7 +50,9 @@ const Register = () => {
         <input type="password" placeholder='Password' className="inputText" ref={password} required/>
         <input type="password" placeholder='Confirm Password' className="inputText" ref={passwordConfirm} required/>
         <button type="submit" className="loginBtn">Sign up</button>
-        <button className="registerBtn">Log into Account</button>
+        <button onClick={handleLogin} className="registerBtn">
+          Log into Account
+          </button>
         </form>
         
       </div>
