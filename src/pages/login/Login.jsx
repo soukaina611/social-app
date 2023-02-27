@@ -2,6 +2,7 @@
 import './login.css'
 import { loginCall } from '../apiCalls';
 import { AuthContext } from '../../components/context/AuthContext';
+import { Link } from 'react-router-dom';
 
 const Login = () => {
   const email= useRef();
@@ -41,7 +42,9 @@ const Login = () => {
         <button type="submit"className="loginBtn">{isFetching ? "Loading" : "Log In"}</button>
         <span className="forgotPassword">Forgotten password ?</span>
         <hr/>
+        <Link to="/register">
         <button className="registerBtn">Create new account</button>
+        </Link>
         </form>
         
       </div>
