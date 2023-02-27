@@ -77,3 +77,15 @@
     border-radius: 50%;
     cursor: pointer;
 }
+@media screen and (max-width: 500px){
+    .topBarContainer{
+        max-width: 500px;
+    }
+    .logo{
+        font-size: 18px;
+        margin-left: 5px;
+    }
+    .searchInput, .topBarCenter{
+        display: none;
+    }
+}
