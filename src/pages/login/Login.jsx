@@ -2,19 +2,20 @@
 import './login.css'
 import { loginCall } from '../apiCalls';
 import { AuthContext } from '../../components/context/AuthContext';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
   const email= useRef();
   const password=useRef();
   const {user,isFetching, error, dispatch}=useContext(AuthContext);
-  
+  const navigate=useNavigate();
   const handleSubmit =(e)=>{
     e.preventDefault();
     loginCall({email:email.current.value, password:password.current.value}, dispatch);
   };
-  //console.log(user);
-
+  const handleRegister=()=>{
+    navigate('/register');
+  }
 
   return (
     <div className="login">
@@ -42,9 +43,7 @@ const Login = () => {
         <button type="submit"className="loginBtn">{isFetching ? "Loading" : "Log In"}</button>
         <span className="forgotPassword">Forgotten password ?</span>
         <hr/>
-        <Link to="/register">
-        <button className="registerBtn">Create new account</button>
-        </Link>
+        <button onClick={handleRegister} className="registerBtn">Create new account</button>
         </form>
         
       </div>
