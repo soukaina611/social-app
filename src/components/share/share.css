@@ -78,3 +78,33 @@
     right:20px;
     cursor: pointer;
 }
+@media screen and (max-width:500px) {
+    .shareHeaderBottom{
+        width: 250px;
+        justify-content: flex-start;
+    }
+    .imagePicture{
+        width: 35px;
+        height: 35px;
+    }
+    .shareInputText{
+        font-size: 9px;
+        width: 80%;
+    }
+    .shareWrapper{
+        padding: 10px 0px;
+    }
+
+    .shareBottomItem{
+        margin-right: 2px;
+    }
+    .iconItem{
+        font-size: 13px !important;
+    }
+    .iconText{
+        font-size: 9px;
+    }
+    .shareBtn{
+        font-size: 9px;
+    }
+}

@@ -84,3 +84,22 @@
 .btnFollow:focus{
     outline:none;
 }
+@media screen and (max-width: 500px){
+    .rightBar{
+        width: 125px;
+
+    }
+    .rightBarWrapper{
+        padding: 10px;
+    }
+    .birthday{
+        width: 25px;
+        height: 25px;
+    }
+    .birthdayText{
+        font-size: 10px;
+    }
+    .onlineFriendText{
+        font-size: 13px;
+    }
+}

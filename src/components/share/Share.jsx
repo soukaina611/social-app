@@ -59,7 +59,7 @@ const Share = () => {
           <div className="shareBottomRight">
               <label htmlFor='file' className="shareBottomItem">
                 <CollectionsIcon htmlColor='tomato' className='iconItem'/>
-                <span className="iconText">Photo or video</span>
+                <span className="iconText">Photo</span>
                 <input style={{display:"none"}} name='file' type="file" id="file" accept='.png,.jpeg,.jpg' onChange={(e)=>setFile(e.target.files[0])} />
               </label>
               <div className="shareBottomItem">

@@ -63,3 +63,11 @@
 .postComments{
     font-size: 15px;
 }
+@media screen and (max-width:500px) {
+    .userName{
+        font-size: 12px;
+    }
+    .date{
+        font-size: 10px;
+    }
+}

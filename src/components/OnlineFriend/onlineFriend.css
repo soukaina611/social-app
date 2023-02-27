@@ -28,3 +28,16 @@
 .username{
     font-weight: 500;
 }
+@media screen and (max-width:500px) {
+    .imgProfileOnline{
+        width: 35px;
+        height: 35px;
+    }
+    .username{
+        font-size: 12px;
+    }
+    .onlineIcon{
+        width: 9px;
+        height: 9px;
+    }
+}
