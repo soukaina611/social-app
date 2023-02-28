@@ -30,7 +30,7 @@ useEffect(()=>{
 useEffect(()=>{
   const getCloseFriends=async()=>{
       try{
-          const closeFriends= await axios.get("users/all");
+          const closeFriends= await axios.get(`${BASE_URL}/users/all`);
           console.log(closeFriends.data)
           setUsers(closeFriends.data);
       }catch(err){
