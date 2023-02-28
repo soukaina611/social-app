@@ -8,10 +8,8 @@ import TurnedInRoundedIcon from '@mui/icons-material/TurnedInRounded';
 import HelpOutlineRoundedIcon from '@mui/icons-material/HelpOutlineRounded';
 import WorkOutlineRoundedIcon from '@mui/icons-material/WorkOutlineRounded';
 import EventRoundedIcon from '@mui/icons-material/EventRounded';
-import CloseFriend from "../closeFriend/CloseFriend";
 import axios from 'axios'
 import { AuthContext } from '../context/AuthContext';
-import { Link } from 'react-router-dom';
 import { BASE_URL } from '../../services/helper'
 
 
@@ -73,15 +71,6 @@ const LeftBar = () => {
         </ul>
         <button className="btnBar">Show More</button>
         <hr className='hrBar'/>
-        <ul className="leftBarBottom">
-        {users.map((u) => (
-            <>
-            <Link style={{textDecoration:"none", color:"black"}} to={"/profile/"+u.username}>
-            <CloseFriend key={u.id} user={u} />
-            </Link>
-            </>
-          ))}
-        </ul>
       </div>
     </div>
   )

@@ -86,8 +86,7 @@
 }
 @media screen and (max-width: 500px){
     .rightBar{
-        width: 125px;
-
+        width: 40%;
     }
     .rightBarWrapper{
         padding: 10px;

@@ -63,17 +63,6 @@
 }
 @media screen and (max-width: 500px){
     .leftBar{
-        width: 125px;
-
-    }
-    .iconBar{
-        font-size: 15px !important;
-        margin-right: 5px;
-    }
-    .iconBarText{
-        font-size: 12px;
-    }
-    .btnBar{
         display: none;
-    }
+    }  
 }

@@ -5,10 +5,10 @@
     -webkit-box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.28); 
     box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.28);
     padding: 10px;
+
 }
 .shareWrapper{
-    padding: 10px;
-    
+    padding: 10px;  
 }
 .shareHeaderTop{
     display: flex;
@@ -35,12 +35,14 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
+    flex-wrap: wrap;
 }
 .shareBottomRight{
     margin:0;
     padding:0;
     display: flex;
     list-style: none;
+    flex-wrap: wrap;
 }
 .shareBottomItem{
     display: flex;
@@ -80,7 +82,6 @@
 }
 @media screen and (max-width:500px) {
     .shareHeaderBottom{
-        width: 250px;
         justify-content: flex-start;
     }
     .imagePicture{

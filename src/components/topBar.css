@@ -79,10 +79,15 @@
 }
 @media screen and (max-width: 500px){
     .logo{
-        font-size: 18px;
-        margin-left: 5px;
+        font-size: 16px;
+        margin: 0px 10px 0px 5px;
     }
     .searchInput, .topBarCenter{
         display: none;
+    }
+    .topBarContainer{
+        display: flex;
+        flex-wrap: wrap;
+
     }
 }

@@ -28,7 +28,6 @@ const TopBar = () => {
           <Link style={{textDecoration:"none",color:"white"}}to="/">
           <span className='topBarLink'>Homepage</span>
           </Link>
-          <span className='topBarLink'>Timeline</span>
         </div>
         <div className="topBarIcons">
             <div className="topBarItem">

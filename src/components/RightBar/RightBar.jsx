@@ -1,6 +1,5 @@
 import React, { useContext, useEffect, useReducer, useState } from 'react'
 import './rightBar.css'
-import {Users} from '../../data'
 import OnlineFriend from '../OnlineFriend/OnlineFriend'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
@@ -11,6 +10,7 @@ const RightBar = ({user}) => {
   const [friends, setFriends]=useState([]);
   const {user:currentUser, dispatch}=useContext(AuthContext);
   const [followed, setfollowed]= useState(null)
+  const [users, setUsers]=useState([]);
   
 useEffect(()=>{
   setfollowed(currentUser?.followings.includes(user?._id));
@@ -27,6 +27,18 @@ useEffect(()=>{
   }
   friendList();
 },[user])
+useEffect(()=>{
+  const getCloseFriends=async()=>{
+      try{
+          const closeFriends= await axios.get("users/all");
+          console.log(closeFriends.data)
+          setUsers(closeFriends.data);
+      }catch(err){
+          console.log(err)
+      }
+  }
+  getCloseFriends();
+},[])
 
 
 const handleClick=async()=>{
@@ -54,8 +66,12 @@ const handleClick=async()=>{
           <img src={`${BASE_URL}/images/images.jpg`} alt="" className="adsImg" />
           <span className="onlineFriendText">Online Friends</span>  
           <ul className="friendList">
-            {Users.map((u)=>(
+          {users.map((u)=>(
+              <>
+              <Link style={{textDecoration:"none", color:"black"}} to={"/profile/"+u.username}>
               <OnlineFriend key={u.id} user={u} />
+              </Link>
+              </>
             ))}
           </ul>
       </>
