@@ -145,7 +145,7 @@ const Post = ({post}) => {
           <span className="counter">{like}</span>
           </div>
           <div className="postBottomRight">
-            <button onClick={()=>setOpenComments(!openComments)} id="comments" className="postComments">{post.comments.length} comments</button>
+            <button onClick={()=>setOpenComments(!openComments)} id="comments" className="postComments">{post.comments?.length} comments</button>
           </div>
           
         </div>
