@@ -62,6 +62,73 @@
 }
 .postComments{
     font-size: 15px;
+    background-color: white;
+    border: none;
+}
+.postComments:focus{
+    outline: none;
+}
+.comments{
+    display: flex;
+    flex-direction: column;
+    
+}
+.commentsItem{
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    position: relative;
+}
+.commentText{
+    display: flex;
+    flex-direction: column;
+    background-color: #f2f0f5;
+    border-radius: 10px;
+    padding: 10px;
+    width: max-content;
+}
+.username{
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+.text{
+    font-size: 15px;
+}
+.textInput{
+    font-size: 15px;
+    color: black;
+    border: none;
+    background-color: #f2f0f5;
+}
+.textInput:focus{
+    outline:none
+}
+.imgProfileComment{
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+.newComment{
+    display:flex;
+    align-items: center;
+    margin-top: 10px;
+}
+.newComment input{
+    background-color: #f2f0f5;
+    border: none;
+    border-radius: 20px;
+    width: 85%;
+    padding: 12px;
+    font-size: 15px;
+}
+.newComment input:focus{
+    outline: none;
+}
+.iconAction{
+    margin-left: 10px;
+    color:gray;
 }
 @media screen and (max-width:500px) {
     .userName{

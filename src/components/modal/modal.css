@@ -1,0 +1,31 @@
+.modalContainer{
+    background-color: white;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 60px;
+    position: absolute;
+    right:60px;
+    top: 55px;
+    z-index: 999;
+    padding: 10px;
+    box-shadow: -3px 4px 5px 5px rgba(128,128,128,0.24);
+    -webkit-box-shadow: -3px 4px 5px 5px rgba(128,128,128,0.24);
+    -moz-box-shadow: -3px 4px 5px 5px rgba(128,128,128,0.24);
+}
+.deleteBtn, .updateBtn{
+    font-size: 16px;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    background-color: white;
+    padding: 5px;
+    margin-left: 0px;
+    text-align: start;
+}
+.deleteBtn:hover,.updateBtn:hover{
+    background-color: rgb(243, 243, 243);
+    width: 100%;
+    padding: 5px;
+}
