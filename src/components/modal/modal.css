@@ -29,3 +29,12 @@
     width: 100%;
     padding: 5px;
 }
+@media screen and (max-width:500px) {
+    .modalContainer{
+        width: 150px;
+        height: 50px;
+    }
+    .deleteBtn, .updateBtn{
+        font-size: 14px;
+    }
+}

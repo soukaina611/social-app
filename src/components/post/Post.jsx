@@ -4,6 +4,7 @@ import MoreVertIcon from '@mui/icons-material/MoreVert';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz'
 import RecommendRoundedIcon from '@mui/icons-material/RecommendRounded';
 import FavoriteIcon from '@mui/icons-material/Favorite';
+import SendIcon from '@mui/icons-material/Send'
 import {Link} from 'react-router-dom';
 import {format} from 'timeago.js'
 import axios from 'axios'
@@ -23,6 +24,7 @@ const Post = ({post}) => {
   const [updateText, setUpdateText]=useState(false)
   const[number,setNumber]=useState(-1)
   const [inputText,setInputText]=useState("")
+  const [windowScreen, setWindowScreen]= useState(window.screen.width);
   const icon=useRef();
   const text=useRef();
 
@@ -98,6 +100,18 @@ const Post = ({post}) => {
       addcomment();
     }
   }
+  const addCommentMobile=async()=>{
+    const comment ={
+        sender: currentUser._id, 
+        text: text.current.value
+    }
+    try{
+      await axios.post(`${BASE_URL}/posts/addComment/`+post._id, comment)
+      window.location.reload();
+    }catch(err){
+      console.log(err)
+    }
+}
   const handleModel=(element,index)=>{
     if(element[index]._id===currentUser._id){
       setNumber(index);
@@ -165,8 +179,10 @@ const Post = ({post}) => {
               ))
               )}
                 <div className='newComment'>
-                  <img className="imgProfileComment" src={user.profilePicture ? `${BASE_URL}/images/`+user.profilePicture : `${BASE_URL}/images/person/noAvatar.png`}/>
+                  <img className="imgProfileComment" src={currentUser.profilePicture ? `${BASE_URL}/images/`+currentUser.profilePicture : `${BASE_URL}/images/person/noAvatar.png`}/>
                   <input type="text" onKeyUp={addComment} ref={text} placeholder='Écrivez un commentaire...'/>
+                  {windowScreen<="500" && <SendIcon style={{color:"#1877f2",fontSize:"18px", marginLeft:"5px"}} onClick={addCommentMobile} />}
+
                 </div>
             </div>
         }
